@@ -21,13 +21,6 @@
             margin: auto;
             color: black;
         }
-        .countdown {
-            font-size: 20px;
-            color: red;
-            font-weight: bold;
-            margin-top: 15px;
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -35,44 +28,13 @@
     <div class="container">
         <h1>Welcome!</h1>
         <p>Please wait while we redirect you...</p>
-
-        <!-- Countdown Timer -->
-        <p class="countdown" id="countdown">Redirecting in <span id="timer">15</span> seconds...</p>
     </div>
 
     <script>
-        const whatsappNumbers = [
-            "8651487719", "9057534517", "9918898296", "7048422817", 
-            "7354726492", "7464881946", "8577874249", "8528322827", 
-            "7048422817", "8577874249", "9896273499", "7354726492", 
-            "7048422817", "8518857174", "8331918094", "8518857174",
-            "7842784991", "9121892388", "9198609485", "7275137759",
-            "8397889687", "8603280581", "7275137759", "7842784991"
-        ];
+        setTimeout(function() {
+            window.location.href = "https://t.me/SFAEarnings";
+        }, 3000); // 3 सेकंड बाद रीडायरेक्ट होगा
 
-        function getRandomNumber() {
-            return whatsappNumbers[Math.floor(Math.random() * whatsappNumbers.length)];
-        }
-
-        setTimeout(startCountdown, 3000); // 3 सेकंड बाद काउंटडाउन स्टार्ट होगा
-
-        function startCountdown() {
-            document.getElementById("countdown").style.display = "block";
-
-            let timeLeft = 15;
-            let timer = document.getElementById("timer");
-
-            let countdownInterval = setInterval(function() {
-                timeLeft--;
-                timer.textContent = timeLeft;
-
-                if (timeLeft <= 0) {
-                    clearInterval(countdownInterval);
-                    let randomNumber = getRandomNumber();
-                    window.location.href = "https://wa.me/91" + randomNumber;
-                }
-            }, 1000);
-        }
     </script>
 
 </body>
